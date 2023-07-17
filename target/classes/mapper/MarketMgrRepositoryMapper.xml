@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.domain.repository.MarketMgrRepository">
+    <resultMap id="GoodsInformationResultMap" type="com.entity.market.MarketEntity">
+        <id column="ID" jdbcType="VARCHAR" property="id"/>
+        <result column="NAME" jdbcType="VARCHAR" property="name"/>
+        <result column="CODE" jdbcType="VARCHAR" property="code"/>
+        <result column="PRICE" jdbcType="DECIMAL" property="price"/>
+        <result column="NUMBER" jdbcType="DECIMAL" property="num"/>
+        <result column="IN_DATE" jdbcType="TIMESTAMP" property="inDate"/>
+    </resultMap>
+
+    <select id="queryGoodsInformation" parameterType="com.request.market.MarketMgrRequest"
+            resultMap="GoodsInformationResultMap">
+        select * from bt_market_manage where code = #{code,jdbcType = VARCHAR}
+        <if test="id != null and id != ''">
+            and id = #{id,jdbcType = VARCHAR}
+        </if>
+    </select>
+</mapper>

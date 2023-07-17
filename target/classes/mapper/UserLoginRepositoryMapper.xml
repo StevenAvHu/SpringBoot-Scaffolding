@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.domain.repository.library.UserLoginRepository">
+
+    <select id="queryUserInformation" parameterType="java.lang.String" resultType="com.entity.library.UserEntity">
+        select username, password
+        from bt_user_login
+        where username = #{username,jdbcType = VARCHAR}
+          and password = #{password,jdbcType = VARCHAR}
+    </select>
+
+</mapper>
