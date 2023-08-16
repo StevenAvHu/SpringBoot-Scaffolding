@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.Hu</groupId>
-    <artifactId>springBoot-project</artifactId>
+    <groupId>com.myJar</groupId>
+    <artifactId>functional-tool</artifactId>
     <version>1.0.0</version>
-    <name>springBoot</name>
+    <packaging>jar</packaging>
 
     <description>Demo project for Spring Boot</description>
 
@@ -32,8 +32,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>2.5.4</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
